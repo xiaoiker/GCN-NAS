@@ -1,5 +1,5 @@
 # GCN-NAS
-Source code for "Learning Graph Convolutional Network for Skeleton-based Human Action Recognition by Neural Searching", AAAI2020
+Source code for "[Learning Graph Convolutional Network for Skeleton-based Human Action Recognition by Neural Searching](https://arxiv.org/pdf/1911.04131.pdf)", AAAI2020
 
 Coming soon.
 
