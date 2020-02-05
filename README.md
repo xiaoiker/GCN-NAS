@@ -25,9 +25,9 @@ PyTorch Source code for "[Learning Graph Convolutional Network for Skeleton-base
 - Configure the config file for different settings. For example, training model under the corss-view protocal:
 
     `python main.py --config ./config/nturgbd-cross-view/train_joint.yaml`
-## Model Evaluation 
 
-Change the config file for corresponding dateset with its protocal.
+## Model Evaluation 
+- Change the config file for corresponding dateset with its protocal.
 
     `python main.py --config ./config/nturgbd-cross-view/test_joint.yaml`
 
@@ -38,11 +38,11 @@ Change the config file for corresponding dateset with its protocal.
 - Here, we search on the NTU RGB+D dataset under the cross-view evaluation.
 
 ```
-.python gcn_search.py --config ./config/nturgbd-cross-view/search_joint.yaml
+python gcn_search.py --config ./config/nturgbd-cross-view/search_joint.yaml
 ```
 
 ## Acknowledgement
-Our work is inpired by [Two-Stream AGCN](https://github.com/lshiwjx/2s-AGCN/) and [CEM-RL](https://github.com/apourchot/CEM-RL), we thank the authors for sharing their codes.
+- Our work is inpired by [Two-Stream AGCN](https://github.com/lshiwjx/2s-AGCN/) and [CEM-RL](https://github.com/apourchot/CEM-RL), we thank the authors for sharing their codes.
 
 ## BibTeX
 ```
@@ -55,4 +55,4 @@ Our work is inpired by [Two-Stream AGCN](https://github.com/lshiwjx/2s-AGCN/) an
 ```
 
 ## License
-All materials in this repository are released under the  Apache License 2.0.
+All materials in this repository are released under the Apache License 2.0.
