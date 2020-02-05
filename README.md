@@ -26,23 +26,23 @@ PyTorch Source code for "[Learning Graph Convolutional Network for Skeleton-base
 
     `python main.py --config ./config/nturgbd-cross-view/train_joint.yaml`
 ## Model Evaluation 
-Change the config file depending on what you want.
 
+Change the config file for corresponding dateset with its protocal.
 
-    `python main.py --config ./config/nturgbd-cross-view/train_joint.yaml`
-```
-./train.sh configs/config_regular_c109_n32.yaml
-```
+    `python main.py --config ./config/nturgbd-cross-view/test_joint.yaml`
+
 
 ## Model searching 
 - Devide the training data into trainging set and searching parts, as it is for a general NAS.
-- run the gcn_search.py with corresponding configuration.
+- Run the gcn_search.py with corresponding configuration.
+- Here, we search on the NTU RGB+D dataset under the cross-view evaluation.
+
 ```
-./train.sh configs/config_regular_c109_n32.yaml
+.python gcn_search.py --config ./config/nturgbd-cross-view/search_joint.yaml
 ```
 
-## License
-All materials in this repository are released under the  Apache License 2.0.
+## Acknowledgement
+Our work is inpired by [Two-Stream AGCN](https://github.com/lshiwjx/2s-AGCN/) and [CEM-RL](https://github.com/apourchot/CEM-RL), we thank the author for sharing their codes.
 
 ```
 @article{peng2020learning,
@@ -52,3 +52,6 @@ All materials in this repository are released under the  Apache License 2.0.
   year={2020}
 }
 ```
+
+## License
+All materials in this repository are released under the  Apache License 2.0.
