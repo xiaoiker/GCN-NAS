@@ -42,8 +42,9 @@ Change the config file for corresponding dateset with its protocal.
 ```
 
 ## Acknowledgement
-Our work is inpired by [Two-Stream AGCN](https://github.com/lshiwjx/2s-AGCN/) and [CEM-RL](https://github.com/apourchot/CEM-RL), we thank the author for sharing their codes.
+Our work is inpired by [Two-Stream AGCN](https://github.com/lshiwjx/2s-AGCN/) and [CEM-RL](https://github.com/apourchot/CEM-RL), we thank the authors for sharing their codes.
 
+## BibTeX
 ```
 @article{peng2020learning,
   title={Learning Graph Convolutional Network for Skeleton-based Human Action Recognition by Neural Searching},
