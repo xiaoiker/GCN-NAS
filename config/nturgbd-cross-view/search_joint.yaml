@@ -1,0 +1,40 @@
+work_dir: ./work_dir/ntu/xview/agcn_joint
+model_saved_name: ./runs/ntu_cv_agcn_joint_Srch
+# feeder
+feeder: feeders.feeder.Feeder
+train_feeder_args:
+  data_path: /scratch/project_2001654/wp/data/ntu/xview/train_data_joint1.npy
+  label_path: /scratch/project_2001654/wp/data/ntu/xview/train_label1.pkl
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: -1
+  normalization: False
+
+test_feeder_args:
+  data_path: /scratch/project_2001654/wp/data/ntu/xview/train_data_joint2.npy
+  label_path: /scratch/project_2001654/wp/data/ntu/xview/train_label2.pkl
+
+# model
+model: model.agcn_search.Model
+model_args:
+  num_class: 60
+  num_point: 25
+  num_person: 2
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [30, 45, 60]
+
+# training
+device: [0]
+start_epoch: 0
+batch_size: 40
+test_batch_size: 20
+num_epoch: 70
+nesterov: True

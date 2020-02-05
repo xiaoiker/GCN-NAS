@@ -1,0 +1,46 @@
+work_dir: ./work_dir/kinetics/agcn_bone__SrchCT
+model_saved_name: ./runs/ki_agcn_bone__SrchCT
+
+# feeder
+feeder: feeders.feeder.Feeder
+train_feeder_args:
+  random_choose: True
+  random_move: True
+  window_size: 150
+  data_path: ./data/kinetics/train_data_bone.npy
+  label_path: ./data/kinetics/train_label.pkl
+  debug: False
+
+test_feeder_args:
+  data_path: ./data/kinetics/val_data_bone.npy
+  label_path: ./data/kinetics/val_label.pkl
+
+# model
+#Reduce model
+#model: model.agcn2.Model2 
+#model CT
+#model: model.agcn.Model 
+#Searched model
+model: model.agcn3.Model
+
+model_args:
+  num_class: 400
+  num_person: 2
+  num_point: 18
+  graph: graph.kinetics.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0001
+base_lr: 0.1
+step: [45, 60, 75]
+
+# training
+device: [0, 1, 2, 3]
+batch_size: 96
+test_batch_size: 48
+num_epoch: 90
+nesterov: True
+
+

@@ -1,0 +1,46 @@
+work_dir: ./work_dir/ntu/xview/agcn_bone_Srch
+model_saved_name: ./runs/ntu_cv_agcn_bone_Srch_CT
+# feeder
+feeder: feeders.feeder.Feeder
+train_feeder_args:
+  data_path: ./data/ntu/xview/train_data_bone.npy
+  label_path: ./data/ntu/xview/train_label.pkl
+  debug: False
+  random_choose: Ture
+  random_shift: False
+  random_move: False
+  window_size: 270
+  normalization: False
+
+test_feeder_args:
+  data_path: ./data/ntu/xview/val_data_bone.npy
+  label_path: ./data/ntu/xview/val_label.pkl
+
+# model
+#Reduce model
+#model: model.agcn2.Model2 
+#model CT
+#model: model.agcn.Model 
+#Searched model
+model: model.agcn3.Model
+
+model_args:
+  num_class: 60
+  num_point: 25
+  num_person: 2
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0006
+base_lr: 0.1
+step: [30, 45, 60]
+
+# training
+device: [0, 1 ,2, 3]
+batch_size: 96
+test_batch_size: 40
+num_epoch: 70
+nesterov: True
+

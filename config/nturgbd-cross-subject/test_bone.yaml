@@ -1,0 +1,34 @@
+# feeder
+feeder: feeders.feeder.Feeder
+test_feeder_args:
+  data_path: ./data/ntu/xsub/val_data_bone.npy
+  label_path: ./data/ntu/xsub/val_label.pkl
+  debug: False
+
+# model
+#Reduce model
+#model: model.agcn2.Model2 
+#model CT
+#model: model.agcn.Model 
+#Searched model
+model: model.agcn3.Model
+
+model_args:
+  num_class: 60
+  num_point: 25
+  num_person: 2
+  graph: graph.ntu_rgb_d.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+# test
+phase: test
+device: [0,1,2,3]
+test_batch_size: 40
+
+#weights: ./runs/ntu_cs_agcn_bone-49-31300.pt
+weights: ./runs/ntu_cs_agcn_bone_Srch_CT-63-32064.pt
+
+work_dir: ./work_dir/ntu/xsub/agcn_test_bone
+model_saved_name: ./runs/ntu_cs_agcn_test_bone
+save_score: True
