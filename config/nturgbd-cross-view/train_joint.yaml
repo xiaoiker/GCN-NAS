@@ -24,7 +24,7 @@ test_feeder_args:
 ##Searched model
 #model: model.agcn3.Model
 #Searched model
-model: model.agcn3.Model2
+model: model.agcn3.Model
 
 model_args:
   num_class: 60
